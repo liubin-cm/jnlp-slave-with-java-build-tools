@@ -6,6 +6,6 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 581
 RUN apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
 RUN apt-get update
 RUN apt-cache policy docker-engine
-RUN apt-get install -y docker-engine=1.10.3-0~xenial
+RUN apt-get install -y docker-engine=1.12.6-0~ubuntu-xenial
 RUN usermod -aG docker jenkins
 USER jenkins
