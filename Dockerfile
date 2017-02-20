@@ -13,5 +13,4 @@ RUN set -x \
 	&& rmdir docker \
 	&& rm docker.tgz \
 	&& docker -v
-	
-USER jenkins
+
