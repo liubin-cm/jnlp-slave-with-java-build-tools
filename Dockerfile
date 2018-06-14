@@ -36,7 +36,7 @@ ENV DOCKER_BUCKET get.docker.com
 ENV DOCKER_VERSION 1.13.1
 ENV DOCKER_SHA256 4a9766d99c6818b2d54dc302db3c9f7b352ad0a80a2dc179ec164a3ba29c2d3e
 
-RUN apt-get install -y docker-engine=1.13.1
+RUN apt-get install -y docker-engine
 RUN docker version
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
