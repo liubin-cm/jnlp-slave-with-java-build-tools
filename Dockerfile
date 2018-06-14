@@ -39,7 +39,7 @@ RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 581
 RUN apt-get update
 RUN apt-cache policy docker-engine
 RUN apt-get install -y docker-engine=1.13.1-0~debian-stretch
-RUN docker version
+#RUN docker version
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
 RUN chmod +x /usr/local/bin/jenkins-slave
