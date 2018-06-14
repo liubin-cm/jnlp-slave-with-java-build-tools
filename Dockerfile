@@ -37,7 +37,7 @@ ENV DOCKER_VERSION 1.13.1
 ENV DOCKER_SHA256 4a9766d99c6818b2d54dc302db3c9f7b352ad0a80a2dc179ec164a3ba29c2d3e
 
 RUN bash -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
-RUN apt-get install -y lxc-docker
+RUN apt-get update && apt-get install -y lxc-docker
 RUN docker version
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
