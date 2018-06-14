@@ -36,7 +36,7 @@ ENV DOCKER_BUCKET get.docker.com
 ENV DOCKER_VERSION 1.13.1
 ENV DOCKER_SHA256 4a9766d99c6818b2d54dc302db3c9f7b352ad0a80a2dc179ec164a3ba29c2d3e
 
-RUN curl -fsSL 'https://sks-keyservers.net/pks/lookup?op=get&search=0xee6d536cf7dc86e2d7d56f59a178ac6c6238f52e' | sudo apt-key add -
+RUN curl -fsSL 'https://sks-keyservers.net/pks/lookup?op=get&search=0xee6d536cf7dc86e2d7d56f59a178ac6c6238f52e' | apt-key add -
 RUN apt-get update && add-apt-repository \
    "deb https://packages.docker.com/1.13/apt/repo/ \
    ubuntu-$(lsb_release -cs) \
