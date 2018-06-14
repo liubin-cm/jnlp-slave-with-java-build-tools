@@ -32,6 +32,7 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 #====================================
 RUN curl https://storage.googleapis.com/kubernetes-release/release/v1.10.3/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
+RUN apt-get update
 RUN echo 'deb https://apt.dockerproject.org/repo debian-stretch main' >> /etc/apt/sources.list
 #apt-add-repository 'deb https://apt.dockerproject.org/repo debian-stretch main'
 RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
