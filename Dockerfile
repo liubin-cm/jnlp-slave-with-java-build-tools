@@ -32,11 +32,11 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 #====================================
 RUN curl https://storage.googleapis.com/kubernetes-release/release/v1.10.3/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
-ENV DOCKER_BUCKET get.docker.com
-ENV DOCKER_VERSION 1.13.1
-ENV DOCKER_SHA256 4a9766d99c6818b2d54dc302db3c9f7b352ad0a80a2dc179ec164a3ba29c2d3e
-
-RUN apt-get install -y docker-engine
+RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+RUN apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+RUN apt-get update
+RUN apt-cache policy docker-engine
+RUN apt-get install -y docker-engine=1.13.1-0~ubuntu-xenial
 RUN docker version
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
