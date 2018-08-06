@@ -22,6 +22,10 @@ RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binar
 
 ENV MAVEN_HOME /usr/share/maven
 
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash \
+    && apt-get install -y nodejs
+
+
     # Clean up
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     apt-get autoremove -y && \
