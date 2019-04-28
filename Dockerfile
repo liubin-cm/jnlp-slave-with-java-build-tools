@@ -45,7 +45,8 @@ RUN apt-get update
 #RUN echo 'deb http://apt.dockerproject.org/repo debian-stretch main' >> /etc/apt/sources.list
 #apt-add-repository 'deb https://apt.dockerproject.org/repo debian-stretch main'
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+RUN add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
    $(lsb_release -cs) \
    stable"
 RUN apt-get update
