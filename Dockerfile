@@ -22,7 +22,7 @@ RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binar
 
 ENV MAVEN_HOME /usr/share/maven
 
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash \
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash \
     && apt-get install -y nodejs
 
 
@@ -39,7 +39,10 @@ RUN curl https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/l
 RUN apt-get update
 RUN echo 'deb http://apt.dockerproject.org/repo debian-stretch main' >> /etc/apt/sources.list
 #apt-add-repository 'deb https://apt.dockerproject.org/repo debian-stretch main'
-RUN apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
 RUN apt-get update
 RUN apt-cache policy docker-engine
 RUN apt-get install -y docker-engine=1.13.1-0~debian-stretch
