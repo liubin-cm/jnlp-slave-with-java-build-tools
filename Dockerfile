@@ -51,6 +51,7 @@ RUN add-apt-repository \
    stable"
 RUN apt-get update
 RUN apt-cache policy docker-engine
+RUN apt-cache madison docker-ce
 RUN apt-get install -y docker-engine=1.13.1-0~debian-stretch
 #RUN docker version
 
