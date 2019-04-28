@@ -51,8 +51,8 @@ RUN add-apt-repository \
    stable"
 RUN apt-get update
 RUN apt-cache policy docker-engine
-RUN apt-cache madison docker-engine
-RUN apt-get install -y docker-engine=18.06.3~ce~3-0~debian
+#RUN apt-cache madison docker-engine
+RUN apt-get install -y docker-ce=18.06.3~ce~3-0~debian
 #RUN docker version
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
