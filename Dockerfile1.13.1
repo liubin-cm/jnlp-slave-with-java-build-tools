@@ -1,0 +1,5 @@
+from registry.cn-hangzhou.aliyuncs.com/youfu/jenkins_kubectl:1.10.3.2
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash \
+    && apt-get install -y nodejs
+RUN curl https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
+RUN kubectl version
