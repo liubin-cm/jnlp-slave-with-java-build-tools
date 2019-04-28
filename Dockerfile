@@ -44,7 +44,7 @@ RUN curl https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/l
 RUN apt-get update
 RUN echo 'deb http://apt.dockerproject.org/repo debian-stretch main' >> /etc/apt/sources.list
 #apt-add-repository 'deb https://apt.dockerproject.org/repo debian-stretch main'
-RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
