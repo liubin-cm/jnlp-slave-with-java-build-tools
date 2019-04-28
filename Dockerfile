@@ -11,7 +11,12 @@ RUN apt-get install -y \
     build-essential \
     python python-pip less \
     libnotify-bin ssh \
-    libncurses5:i386 libstdc++6:i386 zlib1g:i386
+    libncurses5:i386 libstdc++6:i386 zlib1g:i386 \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
 
 
 ENV MAVEN_VERSION 3.3.9
