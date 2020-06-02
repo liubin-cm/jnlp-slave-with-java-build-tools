@@ -39,7 +39,7 @@ RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 # Kubernetes CLI
 # See http://kubernetes.io/v1.0/docs/getting-started-guides/aws/kubectl.html
 #====================================
-RUN curl https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
+RUN curl https://storage.googleapis.com/kubernetes-release/release/v1.18.3/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && chmod +x /usr/local/bin/kubectl
 
 RUN apt-get update
 #RUN echo 'deb http://apt.dockerproject.org/repo debian-stretch main' >> /etc/apt/sources.list
@@ -52,7 +52,7 @@ RUN add-apt-repository \
 RUN apt-get update
 RUN apt-cache policy docker-engine
 #RUN apt-cache madison docker-engine
-RUN apt-get install -y docker-ce=18.06.3~ce~3-0~debian
+RUN apt-get install -y docker-ce=19.03.8~ce~3-0~debian
 #RUN docker version
 
 COPY jenkins-slave /usr/local/bin/jenkins-slave
